@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Build brick and break</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+  <link rel="stylesheet" type="text/css" href="./build-brick-and-break.data.css">
+</head>
+
+<body>
+  <script type="module">
+    import { build, repair, destroy } from './build-brick-and-break.js'
+
+    build(54)
+
+    const body = document.querySelector('body')
+
+    const tools = document.createElement('section')
+    tools.id = 'tools'
+    body.append(tools)
+
+    const dynamite = document.createElement('span')
+    dynamite.id = 'dynamite'
+    dynamite.textContent = '🧨'
+    dynamite.addEventListener('click', destroy)
+
+    const hammer = document.createElement('span')
+    hammer.id = 'hammer'
+    hammer.textContent = '🔨'
+    hammer.addEventListener('click', () => repair(...reparations))
+
+    tools.append(dynamite, hammer)
+
+    const random = (min, max) => {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    const randomBricks = [...Array(15).keys()].map((e) => `brick-${random(1, 54)}`)
+    const reparations = [...new Set(['brick-26', ...randomBricks])]
+
+    body.dataset.reparations = reparations
+
+  </script>
+</body>
+
+</html>

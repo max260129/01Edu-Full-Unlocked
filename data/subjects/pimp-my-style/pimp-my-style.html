@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pimp my style</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+  <link rel="stylesheet" type="text/css" href="./pimp-my-style.data.css">
+</head>
+
+<body>
+  <script type="module">
+
+    import { pimp } from './pimp-my-style.js'
+
+    const body = document.querySelector('body')
+
+    const button = document.createElement('button')
+    button.className = 'button'
+    button.textContent = 'pimp my style'
+    body.append(button)
+
+    button.addEventListener('click', pimp)
+
+  </script>
+</body>
+
+</html>

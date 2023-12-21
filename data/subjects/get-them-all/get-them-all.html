@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Get them all</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+  <link rel="stylesheet" type="text/css" href="./get-them-all.data.css">
+</head>
+
+<body>
+  <script type="module">
+
+    import { people } from './get-them-all.data.js'
+    import {
+      getBonannoPisano,
+      getActive,
+      getArchitects,
+      getClassical,
+    } from './get-them-all.js'
+
+    const body = document.querySelector('body')
+
+    const shuffle = (array) => {
+      const test = array.length - 1
+      for (let i = test; i > 0; i--) {
+        const j = Math.floor(Math.random() * i)
+        const temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+      }
+      return array
+    }
+
+    shuffle(people).map(({ id, classe, address, plans, tag, active }) => {
+      const people = document.createElement(tag)
+      people.id = id
+      people.textContent = 'Someone'
+      people.className = `${classe} ${active ? 'active' : ''}`
+      body.append(people)
+    })
+
+    const buttonsContainer = document.createElement('div')
+    buttonsContainer.id = 'buttons'
+    body.append(buttonsContainer)
+
+    const buttons = [
+      { name: 'Architect', action: getArchitects },
+      { name: 'Classical', action: getClassical },
+      { name: 'Active', action: getActive },
+      { name: 'Bonanno', action: getBonannoPisano },
+    ]
+
+    buttons.forEach(({ name, action }, i) => {
+      const btn = document.createElement('button')
+      btn.id = `btn${name}`
+      btn.textContent = `Get ${name}${i === 0 ? 's' : ''}`
+
+      if (i > 0) {
+        btn.className = 'disabled'
+      }
+
+      btn.addEventListener('click', () => {
+        const [targetted, others] = action()
+
+        if (name === 'Bonanno') {
+          targetted.textContent = targetted.id.replace('P', ' P')
+          targetted.classList.add('found')
+        } else {
+          targetted.forEach((t) => {
+            t.textContent = name
+          })
+        }
+
+        others.forEach((o) => {
+          o.style.opacity = 0.2
+        })
+
+        btn.className = 'disabled'
+
+        const last = i + 1 === buttons.length
+        if (last) return
+        const next = document.getElementById(`btn${buttons[i + 1].name}`)
+        next.classList.remove('disabled')
+      })
+
+      buttonsContainer.append(btn)
+    })
+
+  </script>
+</body>
+
+</html>
