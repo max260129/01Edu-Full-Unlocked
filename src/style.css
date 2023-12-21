@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, serif;
+    background-color: #333; /* Or any grey color you prefer, like #555, #777, etc. */
+    color: #fff; /* This sets the font color to white */
+    padding: 20px;
+}
+
+.readme {
+    max-width: 800px;
+    margin: auto;
+    background-color: #333; /* This ensures the background within the readme container is also grey */
+    padding: 20px; /* Adds some padding inside the container */
+    box-shadow: none /* Optional: adds a subtle shadow for some depth */
+    border-radius: 4px; /* Optional: rounds the corners of the readme container */
+}
+
+/* If you have links within your content, you may want to style them to make them visible */
+a {
+    color: #ffffff; /* Example: bright blue color for links */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+a:hover {
+    text-decoration: underline; /* Re-adds underline on hover for better user experience */
+}
+
+/* Any additional elements that you want to stand out can have their colors adjusted here */
+/* For example, for headings: */
+/* Specify a different font for the headings */
+/* Use the Consolas font for headings and make them lowercase */
+h1, h2{
+    font-family: 'Consola', monospace;
+    color: #ffffff; /* Keeps headings white */
+    text-transform: lowercase; /* Converts text to lowercase */
+}
+
+/* The rest of your CSS remains the same */
+
+
+/* The rest of your CSS remains the same */
+
+
+/* Update blockquote color if needed */
+blockquote {
+    background-color: #444; /* Slightly lighter grey for contrast */
+    color: #fff; /* Ensure text inside blockquote is also white */
+}
+
+/* Ensure code blocks are readable */
+code, pre {
+    background-color: #555; /* Darker background for code blocks */
+    color: #ffffff; /* White font for code */
+}
+
+/* Adjust the border color for horizontal rules */
+hr {
+    border-top: 1px solid #555; /* Darker border color for <hr> */
+}

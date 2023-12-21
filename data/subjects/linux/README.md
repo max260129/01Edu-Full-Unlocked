@@ -12,7 +12,7 @@ Operating systems using the Linux kernel are called "Linux distributions".
 
 > "But this wasn't to be just any penguin. Above all, Linus wanted one that looked happy, as if it had just polished off a pitcher of beer and then had the best sex of its life."
 >
-> _Just for Fun: The Story of an Accidental Revolutionary_ (Linus Torvalds, David Diamond)
+>_Just for Fun: The Story of an Accidental Revolutionary_ (Linus Torvalds, David Diamond)
 
 ---
 
