@@ -28,10 +28,11 @@ a:hover {
 /* For example, for headings: */
 /* Specify a different font for the headings */
 /* Use the Consolas font for headings and make them lowercase */
-h1, h2{
-    font-family: 'Consola', monospace;
+h1, h2 {
+    font-family: "IBM Plex Mono"; src: local("IBM Plex Mono Light"), local("IBMPlexMono-Light"), url("/assets/fonts/IBMPlexMono-light-latin.woff2") format("woff2"); font-style: normal; 
     color: #ffffff; /* Keeps headings white */
     text-transform: lowercase; /* Converts text to lowercase */
+    font-size: 3em; /* Example: makes the title twice the size of the default text */
 }
 
 /* The rest of your CSS remains the same */
@@ -55,4 +56,18 @@ code, pre {
 /* Adjust the border color for horizontal rules */
 hr {
     border-top: 1px solid #555; /* Darker border color for <hr> */
+}
+
+#auditButton {
+    background-color: #444; /* Dark grey background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding around the text */
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer; /* Cursor indicates it's clickable */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#auditButton:hover {
+    background-color: #555; /* Slightly lighter grey on hover */
 }

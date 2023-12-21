@@ -44,6 +44,7 @@ function displayReadme(filePath) {
       .then(markdown => {
         // Replace blockquote syntax with normal text
         let htmlContent = marked.parse(markdown);
+        
 
         // Then parse the Markdown to HTML
         const tempDiv = document.createElement('div');
@@ -71,6 +72,7 @@ function displayReadme(filePath) {
             // Replace blockquote with the new paragraph
             blockquote.parentNode.replaceChild(p, blockquote);
           });
+          
 
           document.querySelector('.readme').innerHTML = tempDiv.innerHTML;
 
