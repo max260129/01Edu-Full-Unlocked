@@ -8,9 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Construire le chemin vers le fichier README.md
-    const readmePath = `../data/subjects/${exerciseName}/README.md`;
-    displayReadme(readmePath);
+    const exerciseParts = exerciseName.split('.');
+
+    if (exerciseParts.length == 1) {
+        // Construire le chemin vers le fichier README.md
+        const readmePath = `../data/subjects/${exerciseName}/README.md`;
+        displayReadme(readmePath);   
+    } else if (exerciseParts.length == 2) {
+        // Construire le chemin vers le fichier README.md
+        const readmePath = `../data/subjects/${exerciseParts[0]}/${exerciseParts[1]}/README.md`;
+        displayReadme(readmePath);
+    }
 
     fetch(readmePath)
         .then(response => {
