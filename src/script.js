@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    if (exerciseName) {
+        const auditLink = document.getElementById('auditLink');
+        auditLink.href = `audit.html?exercise=${exerciseName}`;
+    }
+
     const exerciseParts = exerciseName.split('.');
 
     if (exerciseParts.length == 1) {
