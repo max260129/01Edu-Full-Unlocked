@@ -1,16 +1,17 @@
 body {
-    font-family: Arial, sans-serif; /* Use sans-serif to match the fallback font */
-    background-color: #333;
+    font-family: 'Consolas', monospace; /* Use sans-serif to match the fallback font */
+    background-color: #333333;
     color: #fff;
     padding: 20px;
     margin: 0;
+    font-weight: 300;
 }
 
 .readme {
     width: 100%; /* Fluid width */
     max-width: 800px;
     margin: auto;
-    background-color: #333;
+    background-color: #333333;
     padding: 20px;
     box-shadow: none;
     border-radius: 4px;
@@ -20,6 +21,12 @@ body {
 .readme p {
     margin-top: 1em; /* Adds space above each paragraph */
     margin-bottom: 1em; /* Adds space below each paragraph */
+}
+
+.readme h3 {
+    margin-top: 2em;
+    margin-bottom: 2em; /* Adds space after the heading */
+    /* Other styles... */
 }
 
 img {
@@ -57,15 +64,16 @@ a {
 }
 
 a:hover {
+    color: #a64ca6;
     text-decoration: underline; /* Re-adds underline on hover for better user experience */
 }
 
-@font-face {
-    font-family: 'IBM Plex Mono';
+/*@font-face {
+    font-family: 'Consolas', monospace;
     src: local('IBM Plex Mono Light'), local('IBMPlexMono-Light'), url('/assets/fonts/IBMPlexMono-light-latin.woff2') format('woff2');
-    font-weight: 300; /* Light */
+    font-weight: 300; 
     font-style: normal;
-}
+}*/
 
 h2 {
     font-family: "IBM Plex Mono"; src: local("IBM Plex Mono Light"), local("IBMPlexMono-Light"), url("/assets/fonts/IBMPlexMono-light-latin.woff2") format("woff2"); font-style: normal; 
@@ -74,21 +82,16 @@ h2 {
     font-size: 3em; /* Example: makes the title twice the size of the default text */
 }
 
-/* The rest of your CSS remains the same */
-
-
-/* The rest of your CSS remains the same */
-
 
 /* Update blockquote color if needed */
 blockquote {
-    background-color: #444; /* Slightly lighter grey for contrast */
+    background-color: #333333; /* Slightly lighter grey for contrast */
     color: #fff; /* Ensure text inside blockquote is also white */
 }
 
 /* Ensure code blocks are readable */
 code, pre {
-    background-color: #555; /* Darker background for code blocks */
+    background-color: #333333; /* Darker background for code blocks */
     color: #ffffff; /* White font for code */
 }
 
@@ -98,7 +101,7 @@ hr {
 }
 
 #auditButton {
-    background-color: #444; /* Dark grey background */
+    background-color: #333333; /* Dark grey background */
     color: #fff; /* White text */
     border: none; /* No border */
     padding: 10px 20px; /* Padding around the text */
@@ -114,7 +117,7 @@ hr {
 /* Style for <pre> elements that contain console text */
 /* Style for <pre> elements that contain console text */
 pre {
-    background-color: #333; /* Same as the general background color */
+    background-color: #333333; /* Same as the general background color */
     color: #fff; /* White text color for readability */
     padding: 1em; /* Add some padding inside the <pre> tags */
     border-radius: 4px; /* Optional: rounds the corners of the <pre> tags */
@@ -124,5 +127,3 @@ pre {
     font-family: "Consolas", monospace; /* Styling the font for console elements */
     word-wrap: normal; /* Overrides the pre-wrap that might be elsewhere */
 }
-
-

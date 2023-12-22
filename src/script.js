@@ -52,7 +52,19 @@ function displayReadme(filePath) {
         .then(markdown => {
             // Replace ```console code blocks with <pre> tags to preserve formatting
             markdown = markdown.replace(/```console\n([\s\S]*?)```/g, '<pre class="console">$1</pre>');
-            
+            markdown = markdown.replace(/```\n([\s\S]*?)```/g, '<pre>$1</pre>');
+            markdown = markdown.replace(/```sh\n([\s\S]*?)```/g, '<pre>$1</pre>');
+            markdown = markdown.replace(/^## Markdown.*\n/gm, '');
+            markdown = markdown.replace(/^## (?!Markdown|${exerciseName}).*$/gm, (match) => {
+                return match.replace(/^## /, '### ');
+            });
+            //markdown = markdown.replace(/(```````````console\n)([\s\S]*?)\1/g, '<pre class="console">$2</pre>');
+            markdown = markdown.replace(/(^`+console\n[\s\S]*?\n`+$)/gm, function(match) {
+                // Remove the starting and ending backticks with "console"
+                let codeBlock = match.replace(/^`+console\n/gm, '').replace(/\n`+$/gm, '');
+                // Return as a preformatted text block
+                return '<pre class="console">' + codeBlock + '</pre>';
+            });
 
             // Parse the Markdown to HTML
             let htmlContent = marked.parse(markdown);
@@ -83,9 +95,4 @@ function displayReadme(filePath) {
         .catch(error => {
             console.error('Error fetching the README:', error);
         });
-}
-
-
-
-
-  
+}  
