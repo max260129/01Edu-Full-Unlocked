@@ -1,5 +1,7 @@
 # 01Edu Full Unlocked
 
+![Alt text](intra.png)
+
 This is the intra of 01Edu but with no limits of progression.
 
 ## Usage
