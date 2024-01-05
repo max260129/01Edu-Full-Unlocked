@@ -17,3 +17,7 @@ http://127.0.0.1:5500/src/
 ```
 
 And that's it ! Enjoy  ^^
+
+PS: THe projects highlighted in red are not available at the moment.
+
+*PS : Feel free to fork the project and propose improvement.
