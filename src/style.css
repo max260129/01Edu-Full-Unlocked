@@ -127,3 +127,15 @@ pre {
     font-family: "Consolas", monospace; /* Styling the font for console elements */
     word-wrap: normal; /* Overrides the pre-wrap that might be elsewhere */
 }
+
+/* Button Back */
+.buttonback {
+    padding-left: 40px;
+    display: inline-flex;
+    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.iconback {
+    margin-right: 20px;
+}
