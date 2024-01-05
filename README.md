@@ -1,6 +1,6 @@
 # 01Edu Full Unlocked
 
-This is the intra of 01Edu but with no limits.
+This is the intra of 01Edu but with no limits of progression.
 
 ## Usage
 
